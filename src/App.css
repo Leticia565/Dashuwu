@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.dashboard-container {
+  @apply flex;
+}
+
+.dashboard-content {
+  @apply flex-1 p-6;
+}
+
+.dashboard-topbar {
+  @apply mb-6;
+}
+
+.dashboard-header {
+  @apply flex justify-between items-center;
+}
+
+.dashboard-header h1 {
+  @apply text-2xl font-bold;
+}
+
+.user-badge {
+  @apply bg-blue-500 text-white px-3 py-1 rounded-full;
+}
+
+.map-container {
+  @apply w-full h-96 rounded-lg overflow-hidden mb-6;
+}
+
+.sensor-grid {
+  @apply grid grid-cols-2 md:grid-cols-4 gap-6;
+}
+
+.dashboard-footer {
+  @apply text-center text-gray-500 mt-6;
+}

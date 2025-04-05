@@ -1,0 +1,214 @@
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+  background-color: #f5f5f5;
+  overflow: hidden;
+}
+
+.dashboard-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+  background-color: #e754a5; 
+  color: white;
+  border-radius: 16px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 12px rgba(231, 84, 165, 0.4);
+}
+
+.dashboard-layout {
+  display: flex;
+  gap: 20px;
+  height: calc(100vh - 120px); 
+  padding: 10px;
+  overflow: auto;
+}
+
+.deleted-table {
+  width: 100%;
+  background: #fff0f7;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(231, 84, 165, 0.2);
+  padding: 20px;
+  overflow-x: auto;
+  transition: all 0.3s ease-in-out;
+}
+
+.deleted-table table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.deleted-table thead th {
+  background-color: #ffd6e8; 
+  color: #991b48; 
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 14px;
+  padding: 16px 18px;
+  text-align: left;
+  box-shadow: 0 2px 4px rgba(255, 105, 180, 0.1);
+}
+
+.deleted-table thead th:first-child {
+  border-top-left-radius: 14px;
+}
+
+.deleted-table thead th:last-child {
+  border-top-right-radius: 14px;
+}
+
+.deleted-table tbody td {
+  padding: 14px 18px;
+  font-size: 15px;
+  color: #444;
+  background-color: #fff;
+  border-bottom: 1px solid #fcd6e6;
+}
+
+.deleted-table tbody tr:hover td {
+  background-color: #fff4fa;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.restore-button {
+  background-color: #ff69b4;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  transition: background-color 0.3s ease, transform 0.2s;
+  box-shadow: 0 2px 8px rgba(255, 105, 180, 0.25);
+}
+
+.restore-button:hover {
+  background-color: #e754a5;
+  transform: scale(1.03);
+}
+
+.restore-button:active {
+  transform: scale(0.97);
+  background-color: #c84690;
+}
+
+.last-updated-container {
+  text-align: right;
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.user-badge {
+  background-color: #ffd6e8;
+  color: #5a2a47;
+  border-radius: 50%;
+  padding: 12px 16px;
+  font-weight: bold;
+  font-size: 18px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.user-badge:hover {
+  background-color: #fcb3d1;
+  transform: scale(1.05);
+}
+
+.leaf-icon {
+  font-size: 20px;
+  margin-right: 8px;
+}
+
+.spinner-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.spinner {
+  width: 35px;
+  height: 35px;
+  border: 4px solid #ffd6e8;
+  border-top: 4px solid #d63384;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 0 auto 10px;
+}
+
+.spinner-text {
+  color: #d63384;
+  font-weight: bold;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.no-results {
+  background-color: #fff0f7;
+  color: #a8184b;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.title-and-filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.table-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #991b48;
+  margin: 0;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.filter-buttons button {
+  background-color: #ffd6e8;
+  color: #a8184b;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 2px 6px rgba(231, 84, 165, 0.15);
+}
+
+.filter-buttons button:hover {
+  background-color: #fcb3d1;
+  transform: scale(1.05);
+}
+
+.filter-buttons button:active,
+.filter-buttons button.active {
+  background-color: #e754a5;
+  color: white;
+  transform: scale(0.97);
+}

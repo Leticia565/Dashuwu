@@ -1,0 +1,135 @@
+:root {
+  --color-primary: #ff69b4;
+  --color-primary-dark: #e754a5;
+  --color-bg: #ffb6c1;
+  --color-glass: rgba(129, 126, 126, 0.45);
+  --color-white-soft: rgba(255, 255, 255, 0.2);
+  --color-border: #ff1493;
+  --text-dark: #660033;
+  --text-light: #ffffff;
+  --font-family: 'Arial', sans-serif;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: var(--font-family);
+}
+
+/* Fondo con imagen y capa translúcida */
+.verification-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-bg);
+  background-image: url('../img/minecraft-669307_1280.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.verification-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 182, 193, 0.3);
+  backdrop-filter: blur(3px);
+  z-index: 1;
+}
+
+/* Caja del formulario */
+.verification-form {
+  width: 90%;
+  max-width: 400px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--color-glass);
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.verification-form h2 {
+  font-size: 26px;
+  margin-bottom: 25px;
+  color: var(--color-primary-dark);
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+/* Inputs */
+.verification-form input[type="text"] {
+  width: 100%;
+  max-width: 300px;
+  height: 50px;
+  padding: 12px;
+  font-size: 16px;
+  border: 2px solid var(--color-primary);
+  border-radius: 10px;
+  background: #ffe6f0;
+  color: var(--text-dark);
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.verification-form input[type="text"]:focus {
+  background: #ffd6e8;
+  outline: none;
+  border-color: var(--color-border);
+}
+
+/* Botón */
+.verification-form button[type="submit"] {
+  width: 100%;
+  max-width: 300px;
+  padding: 12px;
+  font-size: 18px;
+  background: var(--color-primary);
+  color: var(--text-light);
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, background 0.3s ease;
+  margin-top: 10px;
+}
+
+.verification-form button[type="submit"]:hover {
+  background: var(--color-primary-dark);
+  transform: scale(1.05);
+}
+
+/* Imagen decorativa (opcional) */
+.verification-branding {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.verification-branding img {
+  width: 92%;
+  height: auto;
+  max-height: 1000px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.verification-branding img:hover {
+  transform: scale(1.05);
+}
+

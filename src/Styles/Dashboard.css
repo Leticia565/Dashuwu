@@ -1,0 +1,196 @@
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+  background-color: #fff0f5;
+  overflow: hidden;
+  font-family: 'Arial', sans-serif;
+}
+
+.dashboard-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+  background-color: #e754a5; /* 💖 rosa fuerte */
+  color: white;
+  border-radius: 16px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 12px rgba(231, 84, 165, 0.4);
+}
+
+
+.leaf-icon {
+  color: #fff;
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.user-badge {
+  background-color: #cf80ce;
+  color: #fff;
+  border-radius: 50%;
+  padding: 12px 15px;
+  font-weight: bold;
+  font-size: 16px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+/* 🔲 Distribución general */
+.dashboard-layout {
+  display: flex;
+  gap: 20px;
+  height: calc(100vh - 140px);
+  padding: 0 10px;
+  overflow: auto;
+}
+
+.map-section {
+  flex: 2;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(199, 38, 38, 0.08);
+}
+
+/* 📦 Tarjetas de sensores */
+.sensors-grid {
+  flex: 1;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  padding: 10px;
+  overflow-y: auto;
+}
+
+/* 🌟 SensorCard personalizado */
+.sensor-card {
+  background: linear-gradient(135deg, #ffe6f0, #fddde6);
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 6px 12px rgba(214, 51, 132, 0.2);
+  text-align: center;
+  color: #5a2a47;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sensor-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 18px rgba(214, 51, 132, 0.25);
+}
+
+.sensor-card svg {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #d63384;
+}
+
+.sensor-card h4 {
+  margin: 0;
+  font-size: 16px;
+  color: #b31264;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.sensor-card .value {
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.sensor-card .trend-up {
+  color: green;
+}
+
+.sensor-card .trend-down {
+  color: red;
+}
+
+.sensor-card .trend-stable {
+  color: gray;
+}
+
+/* ❌ Si no hay datos */
+.no-sensor-data {
+  background-color: #ffe8ec;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  color: #999;
+}
+
+/* ℹ️ Panel de detalles */
+.location-info-panel {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 16px 20px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+  max-width: 320px;
+  z-index: 999;
+}
+
+.location-info-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #393537;
+}
+
+.weather-indicator {
+  font-size: 22px;
+}
+
+.location-info-content .info-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #444;
+}
+
+.location-info-dates {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #777;
+}
+
+.last-updated-container {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 13px;
+  color: #666;
+}
+
+/* Spinner centrado */
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  background-color: #fff0f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeOut 0.2s ease forwards; /* ⚡ más rápido */
+  animation-delay: 0.2s; /* ⏱️ aparece solo 0.5 segundos */
+}
+
+/* Texto del loading */
+.loading-screen h2 {
+  margin-top: 20px;
+  color: #d63384;
+  font-size: 20px;
+  font-weight: 600;
+  animation: textFade 0.3s ease-in-out;
+}
+

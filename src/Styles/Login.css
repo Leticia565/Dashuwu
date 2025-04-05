@@ -1,0 +1,157 @@
+:root {
+  --color-primary: #ff69b4;
+  --color-primary-dark: #e754a5;
+  --color-bg: #ffb6c1;
+  --color-glass: rgba(129, 126, 126, 0.45);
+  --color-white-soft: rgba(255, 255, 255, 0.2);
+  --color-border: #ff1493;
+  --text-dark: #660033;
+  --text-light: #ffffff;
+  --font-family: 'Arial', sans-serif;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: var(--font-family);
+}
+
+/* Fondo elegante con capa translúcida */
+.login-elegant {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-bg);
+  background-image: url("../img/minecraft-669307_1280.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.login-elegant::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 182, 193, 0.3);
+  backdrop-filter: blur(3px);
+  z-index: 1;
+}
+
+/* Contenedor del formulario */
+.form-wrapper {
+  width: 90%;
+  max-width: 400px;
+  padding: 40px;
+  background: var(--color-glass);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: var(--text-light);
+}
+
+.form-wrapper h2 {
+  font-size: 26px;
+  margin-bottom: 12px;
+  color: var(--color-primary-dark);
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.subtitle {
+  font-size: 15px;
+  margin-bottom: 20px;
+  color: var(--text-light);
+  opacity: 0.9;
+}
+
+/* Campos de entrada */
+.form-wrapper input[type="email"],
+.form-wrapper input[type="password"] {
+  width: 100%;
+  max-width: 300px;
+  height: 50px;
+  padding: 12px;
+  font-size: 16px;
+  border: 2px solid var(--color-primary);
+  border-radius: 10px;
+  background: #ffe6f0;
+  color: var(--text-dark);
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.form-wrapper input[type="email"]:focus,
+.form-wrapper input[type="password"]:focus {
+  background: #ffd6e8;
+  outline: none;
+  border-color: var(--color-border);
+}
+
+/* Botón */
+.form-wrapper button[type="submit"] {
+  width: 100%;
+  max-width: 300px;
+  padding: 12px;
+  font-size: 18px;
+  background: var(--color-primary);
+  color: var(--text-light);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s, transform 0.2s;
+  margin-top: 10px;
+}
+
+.form-wrapper button[type="submit"]:hover {
+  background: var(--color-primary-dark);
+  transform: scale(1.05);
+}
+
+.register-link {
+  margin-top: 25px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7); /* Gris claro solo para el texto */
+}
+
+/* El enlace es el único con efecto */
+.register-link a {
+  color: #e4dde0; /* Rosa fuerte */
+  font-weight: 600;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* Subrayado animado */
+.register-link a::after {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #ff1493;
+  transition: width 0.3s ease;
+}
+
+.register-link a:hover {
+  color: #ff1493;
+}
+
+.register-link a:hover::after {
+  width: 100%;
+}
+
+.input-icon-group input::placeholder {
+  color: #8c4e6c;
+  text-align: start;
+}
