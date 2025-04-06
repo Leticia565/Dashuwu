@@ -34,7 +34,7 @@ function DeletedParcelas() {
         setParcelas([]);
         setFilteredParcelas([]);
       })
-      .finally(() => setTimeout(() => setLoading(false), 800));
+      .finally(() => setTimeout(() => setLoading(false), 100));
   }, []);
 
   const applyFilter = (tipo: string) => {
