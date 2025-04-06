@@ -1,0 +1,120 @@
+
+
+.leaf-icon {
+  font-size: 1.8rem;
+  color: #fff;
+  margin-right: 10px;
+}
+
+.spinner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 6px solid #ffc1e3;
+  border-top: 6px solid #e91e63;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.spinner-text {
+  margin-top: 1rem;
+  color: #c2185b;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.leyenda-riego-styled {
+  flex: 1;
+  background-color: #ffebf2;
+  padding: 20px;
+  border-radius: 16px;
+  min-width: 250px;
+  box-shadow: 0 0 8px rgba(240, 98, 146, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.leyenda-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 18px;
+  text-align: center;
+  color: #d81b60;
+  border-bottom: 2px solid #f06292;
+  padding-bottom: 6px;
+}
+
+.leyenda-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.leyenda-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+  color: #880e4f;
+}
+
+.circle {
+  margin-right: 10px;
+  font-size: 1.1rem;
+}
+
+/* Marcador personalizado para el mapa */
+.circle-marker {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.zonas-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-top: 24px;
+  justify-content: space-between;
+}
+
+.chart-section {
+  flex: 1 1 30%;
+  min-width: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 1024px) {
+  .zonas-layout {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .map-section,
+  .chart-section {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+  .leyenda-riego-styled {
+    width: 100%;
+  }

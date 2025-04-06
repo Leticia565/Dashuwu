@@ -1,0 +1,48 @@
+.leyenda-solo-chart {
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+    padding: 20px;
+    margin: auto;
+  }
+  
+  .titulo-chart {
+    font-size: 1.3rem;
+    color: #d81b60;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #f06292;
+    padding-bottom: 6px;
+  }
+  
+  .leyenda-rectangular {
+    background-color: #ffe6f0;
+    border-radius: 16px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 14px 10px;
+    margin-top: 25px;
+    box-shadow: 0 0 12px rgba(240, 98, 146, 0.15);
+    flex-wrap: wrap;
+  }
+  
+  .leyenda-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 6px 16px;
+  }
+  
+  .leyenda-color {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+  }
+  
+  .leyenda-text {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #880e4f;
+  }
+  

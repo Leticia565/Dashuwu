@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Dashboard from "./components/Dashboard";
 import HistoricalCharts from "./components/HistoricalCharts";
 import DeletedParcelas from "./components/DeletedParcelas";
+import ZonasInactivas from "./components/ZonasInactivas";
+import ZonasRiego from "./components/ZonasRiego";
 
 import Login from "./pages/Login";
 import Verificar from "./pages/Verificar";
@@ -22,6 +24,8 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/historial" element={<HistoricalCharts />} />
         <Route path="/eliminadas" element={<DeletedParcelas />} />
+        <Route path="/zonasinactivas" element={<ZonasInactivas />} />
+        <Route path="/zonasriego" element={<ZonasRiego />} />
       </Routes>
     </Router>
   );

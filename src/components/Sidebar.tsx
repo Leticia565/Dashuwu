@@ -3,6 +3,15 @@
 import { useNavigate, useLocation } from "react-router-dom"
 import { useState, useEffect } from "react"
 import "../styles/Sidebar.css"
+import {
+  FaTachometerAlt,
+  FaHistory,
+  FaTrashAlt,
+  FaWater,
+  FaExclamationTriangle,
+  FaSignOutAlt,
+  FaLeaf,
+} from "react-icons/fa"
 
 function Sidebar() {
   const navigate = useNavigate()
@@ -10,7 +19,6 @@ function Sidebar() {
   const [isOpen, setIsOpen] = useState(true)
   const [isMobile, setIsMobile] = useState(false)
 
-  // Check if screen is mobile and adjust sidebar accordingly
   useEffect(() => {
     const checkScreenSize = () => {
       setIsMobile(window.innerWidth < 768)
@@ -19,13 +27,8 @@ function Sidebar() {
       }
     }
 
-    // Initial check
     checkScreenSize()
-
-    // Add event listener for window resize
     window.addEventListener("resize", checkScreenSize)
-
-    // Cleanup
     return () => window.removeEventListener("resize", checkScreenSize)
   }, [])
 
@@ -50,30 +53,42 @@ function Sidebar() {
         <div className="logo">
           <div className="logo-container">
             <div className="logo-circle"></div>
-            <div className="logo-leaf"></div>
+            <div className="logo-leaf"><FaLeaf className="animated-icon" /></div>
           </div>
           {isOpen && <div className="logo-text">Cultivitos</div>}
         </div>
 
         <ul className="nav-links">
           <li className={isActive("/dashboard") ? "active" : ""} onClick={() => navigate("/dashboard")}>
-            <span className="nav-icon dashboard-icon"></span>
+            <FaTachometerAlt className="animated-icon" />
             {isOpen && <span className="nav-text">Dashboard</span>}
           </li>
+
           <li className={isActive("/historial") ? "active" : ""} onClick={() => navigate("/historial")}>
-            <span className="nav-icon history-icon"></span>
+            <FaHistory className="animated-icon" />
             {isOpen && <span className="nav-text">Historial</span>}
           </li>
+
           <li className={isActive("/eliminadas") ? "active" : ""} onClick={() => navigate("/eliminadas")}>
-            <span className="nav-icon trash-icon"></span>
+            <FaTrashAlt className="animated-icon" />
             {isOpen && <span className="nav-text">Eliminados</span>}
+          </li>
+
+          <li className={isActive("/zonasriego") ? "active" : ""} onClick={() => navigate("/zonasriego")}>
+            <FaWater className="animated-icon" />
+            {isOpen && <span className="nav-text">Riego</span>}
+          </li>
+
+          <li className={isActive("/zonasinactivas") ? "active" : ""} onClick={() => navigate("/zonasinactivas")}>
+            <FaExclamationTriangle className="animated-icon" />
+            {isOpen && <span className="nav-text">Inactivas</span>}
           </li>
         </ul>
       </div>
 
       <div className="sidebar-footer">
         <button className="logout-button" onClick={handleLogout}>
-          <span className="logout-icon"></span>
+          <FaSignOutAlt className="animated-icon" />
           {isOpen && <span>Cerrar sesión</span>}
         </button>
         {isOpen && (
@@ -87,4 +102,3 @@ function Sidebar() {
 }
 
 export default Sidebar
-
